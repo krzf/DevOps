@@ -1,0 +1,22 @@
+---
+- name: Update
+  apt:
+    update_cache: yes
+
+- name: Install Docker
+  apt:
+    name: docker.io
+    state: present
+
+- name: Install compose
+  apt:
+    name: docker-compose
+    state: present
+  
+
+- name: Deploy microservices application with Docker Compose
+  shell: |
+    cd /vagrant
+    sudo docker-compose up -d
+  become: true
+

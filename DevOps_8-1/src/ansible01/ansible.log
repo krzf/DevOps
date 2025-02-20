@@ -1,0 +1,855 @@
+2025-02-11 17:00:48,860 p=41485 u=vagrant n=ansible | PLAY [Deploy application, apache and postgres] ********************************************
+2025-02-11 17:00:48,867 p=41485 u=vagrant n=ansible | TASK [Gathering Facts] ********************************************************************
+2025-02-11 17:00:49,630 p=41485 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-11 17:00:49,635 p=41485 u=vagrant n=ansible | TASK [application : Update] ***************************************************************
+2025-02-11 17:01:29,769 p=41485 u=vagrant n=ansible | changed: [192.168.50.11]
+2025-02-11 17:01:29,774 p=41485 u=vagrant n=ansible | TASK [application : Install Docker] *******************************************************
+2025-02-11 17:01:55,836 p=41485 u=vagrant n=ansible | changed: [192.168.50.11]
+2025-02-11 17:01:55,840 p=41485 u=vagrant n=ansible | TASK [application : Install compose] ******************************************************
+2025-02-11 17:02:00,899 p=41485 u=vagrant n=ansible | changed: [192.168.50.11]
+2025-02-11 17:02:00,904 p=41485 u=vagrant n=ansible | TASK [application : Deploy microservices application with Docker Compose] *****************
+2025-02-11 17:02:01,152 p=41485 u=vagrant n=ansible | fatal: [192.168.50.11]: FAILED! => changed=true 
+  cmd: |-
+    cd /vagrant
+    sudo docker stack deploy -c docker-compose.yaml devops8
+  delta: '0:00:00.031230'
+  end: '2025-02-11 17:02:00.404245'
+  msg: non-zero return code
+  rc: 1
+  start: '2025-02-11 17:02:00.373015'
+  stderr: |-
+    Since --detach=false was not specified, tasks will be created in the background.
+    In a future release, --detach=false will become the default.
+    this node is not a swarm manager. Use "docker swarm init" or "docker swarm join" to connect this node to swarm and try again
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2025-02-11 17:02:01,153 p=41485 u=vagrant n=ansible | PLAY RECAP ********************************************************************************
+2025-02-11 17:02:01,153 p=41485 u=vagrant n=ansible | 192.168.50.11              : ok=4    changed=3    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-02-11 17:30:33,137 p=42950 u=vagrant n=ansible | PLAY [Deploy application, apache and postgres] ****************************************************
+2025-02-11 17:30:33,145 p=42950 u=vagrant n=ansible | TASK [Gathering Facts] ****************************************************************************
+2025-02-11 17:30:34,347 p=42950 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-11 17:30:34,352 p=42950 u=vagrant n=ansible | TASK [application : Update] ***********************************************************************
+2025-02-11 17:30:36,402 p=42950 u=vagrant n=ansible | changed: [192.168.50.11]
+2025-02-11 17:30:36,406 p=42950 u=vagrant n=ansible | TASK [application : Install Docker] ***************************************************************
+2025-02-11 17:30:37,071 p=42950 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-11 17:30:37,075 p=42950 u=vagrant n=ansible | TASK [application : Install compose] **************************************************************
+2025-02-11 17:30:37,769 p=42950 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-11 17:30:37,774 p=42950 u=vagrant n=ansible | TASK [application : Deploy microservices application with Docker Compose] *************************
+2025-02-11 17:30:38,254 p=42950 u=vagrant n=ansible | fatal: [192.168.50.11]: FAILED! => changed=true 
+  cmd: |-
+    cd /vagrant
+    sudo docker-compose up -d
+  delta: '0:00:00.285612'
+  end: '2025-02-11 17:30:38.257195'
+  msg: non-zero return code
+  rc: 1
+  start: '2025-02-11 17:30:37.971583'
+  stderr: |-
+    Some services (nginx) use the 'deploy' key, which will be ignored. Compose does not support 'deploy' configuration - use `docker stack deploy` to deploy to a swarm.
+    Creating network "vagrant_postgres_net" with driver "overlay"
+    This node is not a swarm manager. Use "docker swarm init" or "docker swarm join" to connect this node to swarm and try again.
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2025-02-11 17:30:38,255 p=42950 u=vagrant n=ansible | PLAY RECAP ****************************************************************************************
+2025-02-11 17:30:38,256 p=42950 u=vagrant n=ansible | 192.168.50.11              : ok=4    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-02-11 17:51:42,641 p=44011 u=vagrant n=ansible | PLAY [Deploy application, apache and postgres] **************************************************************************************************
+2025-02-11 17:51:42,648 p=44011 u=vagrant n=ansible | TASK [Gathering Facts] **************************************************************************************************************************
+2025-02-11 17:51:43,989 p=44011 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-11 17:51:43,995 p=44011 u=vagrant n=ansible | TASK [application : Update] *********************************************************************************************************************
+2025-02-11 17:51:46,312 p=44011 u=vagrant n=ansible | changed: [192.168.50.11]
+2025-02-11 17:51:46,318 p=44011 u=vagrant n=ansible | TASK [application : Install Docker] *************************************************************************************************************
+2025-02-11 17:51:47,026 p=44011 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-11 17:51:47,032 p=44011 u=vagrant n=ansible | TASK [application : Install compose] ************************************************************************************************************
+2025-02-11 17:51:47,700 p=44011 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-11 17:51:47,708 p=44011 u=vagrant n=ansible | TASK [application : Deploy microservices application with Docker Compose] ***********************************************************************
+2025-02-11 17:51:48,400 p=44011 u=vagrant n=ansible | changed: [192.168.50.11]
+2025-02-11 17:51:48,402 p=44011 u=vagrant n=ansible | PLAY [Install Apache and PostgreSQL on node02] **************************************************************************************************
+2025-02-11 17:51:48,407 p=44011 u=vagrant n=ansible | TASK [Gathering Facts] **************************************************************************************************************************
+2025-02-11 17:51:49,538 p=44011 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-11 17:51:49,542 p=44011 u=vagrant n=ansible | TASK [apache : Install Apache2] *****************************************************************************************************************
+2025-02-11 17:52:19,807 p=44011 u=vagrant n=ansible | changed: [192.168.50.12]
+2025-02-11 17:52:19,811 p=44011 u=vagrant n=ansible | TASK [apache : Ensure Apache is running] ********************************************************************************************************
+2025-02-11 17:52:20,181 p=44011 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-11 17:52:20,187 p=44011 u=vagrant n=ansible | TASK [apache : Create a sample webpage] *********************************************************************************************************
+2025-02-11 17:52:20,604 p=44011 u=vagrant n=ansible | changed: [192.168.50.12]
+2025-02-11 17:52:20,608 p=44011 u=vagrant n=ansible | TASK [postgres : Install PostgreSQL] ************************************************************************************************************
+2025-02-11 17:52:35,761 p=44011 u=vagrant n=ansible | changed: [192.168.50.12]
+2025-02-11 17:52:35,765 p=44011 u=vagrant n=ansible | TASK [postgres : Ensure PostgreSQL is running] **************************************************************************************************
+2025-02-11 17:52:35,999 p=44011 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-11 17:52:36,003 p=44011 u=vagrant n=ansible | TASK [postgres : Create PostgreSQL database] ****************************************************************************************************
+2025-02-11 17:52:36,216 p=44011 u=vagrant n=ansible | fatal: [192.168.50.12]: FAILED! => changed=false 
+  msg: Failed to import the required Python library (psycopg2) on ubuntu-focal's Python /usr/bin/python3. Please read module documentation and install in the appropriate location. If the required library is installed, but Ansible is using the wrong Python interpreter, please consult the documentation on ansible_python_interpreter
+2025-02-11 17:52:36,217 p=44011 u=vagrant n=ansible | PLAY RECAP **************************************************************************************************************************************
+2025-02-11 17:52:36,217 p=44011 u=vagrant n=ansible | 192.168.50.11              : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-02-11 17:52:36,217 p=44011 u=vagrant n=ansible | 192.168.50.12              : ok=6    changed=3    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-02-12 05:16:50,368 p=1661 u=vagrant n=ansible | [WARNING]: Found both group and host with same name: node02
+
+2025-02-12 05:16:50,700 p=1661 u=vagrant n=ansible | PLAY [Deploy application, apache and postgres] *********************************
+2025-02-12 05:16:50,716 p=1661 u=vagrant n=ansible | TASK [Gathering Facts] *********************************************************
+2025-02-12 05:16:51,992 p=1661 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 05:16:51,996 p=1661 u=vagrant n=ansible | TASK [application : Update] ****************************************************
+2025-02-12 05:16:58,111 p=1661 u=vagrant n=ansible | changed: [192.168.50.11]
+2025-02-12 05:16:58,116 p=1661 u=vagrant n=ansible | TASK [application : Install Docker] ********************************************
+2025-02-12 05:16:58,883 p=1661 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 05:16:58,889 p=1661 u=vagrant n=ansible | TASK [application : Install compose] *******************************************
+2025-02-12 05:16:59,604 p=1661 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 05:16:59,609 p=1661 u=vagrant n=ansible | TASK [application : Deploy microservices application with Docker Compose] ******
+2025-02-12 05:17:01,473 p=1661 u=vagrant n=ansible | changed: [192.168.50.11]
+2025-02-12 05:17:01,475 p=1661 u=vagrant n=ansible | PLAY [Install Apache and PostgreSQL on node02] *********************************
+2025-02-12 05:17:01,479 p=1661 u=vagrant n=ansible | TASK [Gathering Facts] *********************************************************
+2025-02-12 05:17:01,492 p=1661 u=vagrant n=ansible | fatal: [node02]: UNREACHABLE! => changed=false 
+  msg: 'Failed to connect to the host via ssh: ssh: Could not resolve hostname node02: Temporary failure in name resolution'
+  unreachable: true
+2025-02-12 05:17:01,493 p=1661 u=vagrant n=ansible | PLAY RECAP *********************************************************************
+2025-02-12 05:17:01,493 p=1661 u=vagrant n=ansible | 192.168.50.11              : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-02-12 05:17:01,494 p=1661 u=vagrant n=ansible | node02                     : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2025-02-12 05:17:15,714 p=1753 u=vagrant n=ansible | PLAY [Deploy application, apache and postgres] *********************************
+2025-02-12 05:17:15,723 p=1753 u=vagrant n=ansible | TASK [Gathering Facts] *********************************************************
+2025-02-12 05:17:16,695 p=1753 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 05:17:16,701 p=1753 u=vagrant n=ansible | TASK [application : Update] ****************************************************
+2025-02-12 05:17:18,627 p=1753 u=vagrant n=ansible | changed: [192.168.50.11]
+2025-02-12 05:17:18,634 p=1753 u=vagrant n=ansible | TASK [application : Install Docker] ********************************************
+2025-02-12 05:17:19,468 p=1753 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 05:17:19,474 p=1753 u=vagrant n=ansible | TASK [application : Install compose] *******************************************
+2025-02-12 05:17:20,325 p=1753 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 05:17:20,336 p=1753 u=vagrant n=ansible | TASK [application : Deploy microservices application with Docker Compose] ******
+2025-02-12 05:17:21,036 p=1753 u=vagrant n=ansible | changed: [192.168.50.11]
+2025-02-12 05:17:21,038 p=1753 u=vagrant n=ansible | PLAY [Install Apache and PostgreSQL on node02] *********************************
+2025-02-12 05:17:21,041 p=1753 u=vagrant n=ansible | TASK [Gathering Facts] *********************************************************
+2025-02-12 05:17:21,065 p=1753 u=vagrant n=ansible | fatal: [ansible_python_interpreter=/usr/bin/python3]: UNREACHABLE! => changed=false 
+  msg: 'Failed to connect to the host via ssh: ssh: Could not resolve hostname ansible_python_interpreter=/usr/bin/python3: Name or service not known'
+  unreachable: true
+2025-02-12 05:17:22,136 p=1753 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:17:22,140 p=1753 u=vagrant n=ansible | TASK [apache : Install Apache2] ************************************************
+2025-02-12 05:17:29,017 p=1753 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:17:29,025 p=1753 u=vagrant n=ansible | TASK [apache : Ensure Apache is running] ***************************************
+2025-02-12 05:17:29,454 p=1753 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:17:29,459 p=1753 u=vagrant n=ansible | TASK [apache : Create a sample webpage] ****************************************
+2025-02-12 05:17:29,943 p=1753 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:17:29,948 p=1753 u=vagrant n=ansible | TASK [postgres : Install PostgreSQL] *******************************************
+2025-02-12 05:17:31,855 p=1753 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:17:31,859 p=1753 u=vagrant n=ansible | TASK [postgres : Ensure PostgreSQL is running] *********************************
+2025-02-12 05:17:32,156 p=1753 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:17:32,161 p=1753 u=vagrant n=ansible | TASK [postgres : Create PostgreSQL database] ***********************************
+2025-02-12 05:17:32,436 p=1753 u=vagrant n=ansible | fatal: [192.168.50.12]: FAILED! => changed=false 
+  msg: Failed to import the required Python library (psycopg2) on ubuntu-focal's Python /usr/bin/python3. Please read module documentation and install in the appropriate location. If the required library is installed, but Ansible is using the wrong Python interpreter, please consult the documentation on ansible_python_interpreter
+2025-02-12 05:17:32,436 p=1753 u=vagrant n=ansible | PLAY RECAP *********************************************************************
+2025-02-12 05:17:32,436 p=1753 u=vagrant n=ansible | 192.168.50.11              : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-02-12 05:17:32,437 p=1753 u=vagrant n=ansible | 192.168.50.12              : ok=6    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-02-12 05:17:32,437 p=1753 u=vagrant n=ansible | ansible_python_interpreter=/usr/bin/python3 : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2025-02-12 05:21:02,701 p=2097 u=vagrant n=ansible | PLAY [Deploy application, apache and postgres] ******************************************************************************
+2025-02-12 05:21:02,709 p=2097 u=vagrant n=ansible | TASK [Gathering Facts] ******************************************************************************************************
+2025-02-12 05:21:04,310 p=2097 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 05:21:04,317 p=2097 u=vagrant n=ansible | TASK [application : Update] *************************************************************************************************
+2025-02-12 05:21:06,411 p=2097 u=vagrant n=ansible | changed: [192.168.50.11]
+2025-02-12 05:21:06,417 p=2097 u=vagrant n=ansible | TASK [application : Install Docker] *****************************************************************************************
+2025-02-12 05:21:07,145 p=2097 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 05:21:07,152 p=2097 u=vagrant n=ansible | TASK [application : Install compose] ****************************************************************************************
+2025-02-12 05:21:07,855 p=2097 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 05:21:07,861 p=2097 u=vagrant n=ansible | TASK [application : Deploy microservices application with Docker Compose] ***************************************************
+2025-02-12 05:21:08,520 p=2097 u=vagrant n=ansible | changed: [192.168.50.11]
+2025-02-12 05:21:08,523 p=2097 u=vagrant n=ansible | PLAY [Install Apache and PostgreSQL on node02] ******************************************************************************
+2025-02-12 05:21:08,526 p=2097 u=vagrant n=ansible | TASK [Gathering Facts] ******************************************************************************************************
+2025-02-12 05:21:09,584 p=2097 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:21:09,591 p=2097 u=vagrant n=ansible | TASK [apache : Install Apache2] *********************************************************************************************
+2025-02-12 05:21:11,869 p=2097 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:21:11,873 p=2097 u=vagrant n=ansible | TASK [apache : Ensure Apache is running] ************************************************************************************
+2025-02-12 05:21:12,273 p=2097 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:21:12,278 p=2097 u=vagrant n=ansible | TASK [apache : Create a sample webpage] *************************************************************************************
+2025-02-12 05:21:12,766 p=2097 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:21:12,772 p=2097 u=vagrant n=ansible | TASK [postgres : Install python3-psycopg2] **********************************************************************************
+2025-02-12 05:21:17,135 p=2097 u=vagrant n=ansible | changed: [192.168.50.12]
+2025-02-12 05:21:17,139 p=2097 u=vagrant n=ansible | TASK [postgres : Install PostgreSQL] ****************************************************************************************
+2025-02-12 05:21:18,997 p=2097 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:21:19,002 p=2097 u=vagrant n=ansible | TASK [postgres : Ensure PostgreSQL is running] ******************************************************************************
+2025-02-12 05:21:19,260 p=2097 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:21:19,264 p=2097 u=vagrant n=ansible | TASK [postgres : Create PostgreSQL database] ********************************************************************************
+2025-02-12 05:21:19,526 p=2097 u=vagrant n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: psycopg2.OperationalError: FATAL:  Peer authentication failed for user "postgres"
+2025-02-12 05:21:19,527 p=2097 u=vagrant n=ansible | fatal: [192.168.50.12]: FAILED! => changed=false 
+  msg: |-
+    unable to connect to database: FATAL:  Peer authentication failed for user "postgres"
+2025-02-12 05:21:19,528 p=2097 u=vagrant n=ansible | PLAY RECAP ******************************************************************************************************************
+2025-02-12 05:21:19,528 p=2097 u=vagrant n=ansible | 192.168.50.11              : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-02-12 05:21:19,528 p=2097 u=vagrant n=ansible | 192.168.50.12              : ok=7    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-02-12 05:22:08,962 p=2286 u=vagrant n=ansible | PLAY [Deploy application, apache and postgres] ************************************************************************************
+2025-02-12 05:22:08,970 p=2286 u=vagrant n=ansible | TASK [Gathering Facts] ************************************************************************************************************
+2025-02-12 05:22:10,210 p=2286 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 05:22:10,216 p=2286 u=vagrant n=ansible | TASK [application : Update] *******************************************************************************************************
+2025-02-12 05:22:12,323 p=2286 u=vagrant n=ansible | changed: [192.168.50.11]
+2025-02-12 05:22:12,329 p=2286 u=vagrant n=ansible | TASK [application : Install Docker] ***********************************************************************************************
+2025-02-12 05:22:13,144 p=2286 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 05:22:13,153 p=2286 u=vagrant n=ansible | TASK [application : Install compose] **********************************************************************************************
+2025-02-12 05:22:14,063 p=2286 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 05:22:14,070 p=2286 u=vagrant n=ansible | TASK [application : Deploy microservices application with Docker Compose] *********************************************************
+2025-02-12 05:22:14,701 p=2286 u=vagrant n=ansible | changed: [192.168.50.11]
+2025-02-12 05:22:14,704 p=2286 u=vagrant n=ansible | PLAY [Install Apache and PostgreSQL on node02] ************************************************************************************
+2025-02-12 05:22:14,706 p=2286 u=vagrant n=ansible | TASK [Gathering Facts] ************************************************************************************************************
+2025-02-12 05:22:15,387 p=2286 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:22:15,392 p=2286 u=vagrant n=ansible | TASK [apache : Install Apache2] ***************************************************************************************************
+2025-02-12 05:22:17,591 p=2286 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:22:17,596 p=2286 u=vagrant n=ansible | TASK [apache : Ensure Apache is running] ******************************************************************************************
+2025-02-12 05:22:17,990 p=2286 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:22:17,994 p=2286 u=vagrant n=ansible | TASK [apache : Create a sample webpage] *******************************************************************************************
+2025-02-12 05:22:18,398 p=2286 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:22:18,403 p=2286 u=vagrant n=ansible | TASK [postgres : Install python3-psycopg2] ****************************************************************************************
+2025-02-12 05:22:19,124 p=2286 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:22:19,130 p=2286 u=vagrant n=ansible | TASK [postgres : Install PostgreSQL] **********************************************************************************************
+2025-02-12 05:22:21,089 p=2286 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:22:21,094 p=2286 u=vagrant n=ansible | TASK [postgres : Ensure PostgreSQL is running] ************************************************************************************
+2025-02-12 05:22:21,339 p=2286 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:22:21,343 p=2286 u=vagrant n=ansible | TASK [postgres : Create PostgreSQL database] **************************************************************************************
+2025-02-12 05:22:21,608 p=2286 u=vagrant n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: psycopg2.OperationalError: FATAL:  Peer authentication failed for user "postgres"
+2025-02-12 05:22:21,609 p=2286 u=vagrant n=ansible | fatal: [192.168.50.12]: FAILED! => changed=false 
+  msg: |-
+    unable to connect to database: FATAL:  Peer authentication failed for user "postgres"
+2025-02-12 05:22:21,609 p=2286 u=vagrant n=ansible | PLAY RECAP ************************************************************************************************************************
+2025-02-12 05:22:21,609 p=2286 u=vagrant n=ansible | 192.168.50.11              : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-02-12 05:22:21,610 p=2286 u=vagrant n=ansible | 192.168.50.12              : ok=7    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-02-12 05:25:11,501 p=2570 u=vagrant n=ansible | PLAY [Deploy application, apache and postgres] ************************************************************************************
+2025-02-12 05:25:11,514 p=2570 u=vagrant n=ansible | TASK [Gathering Facts] ************************************************************************************************************
+2025-02-12 05:25:12,878 p=2570 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 05:25:12,894 p=2570 u=vagrant n=ansible | TASK [application : Update] *******************************************************************************************************
+2025-02-12 05:25:14,980 p=2570 u=vagrant n=ansible | changed: [192.168.50.11]
+2025-02-12 05:25:14,989 p=2570 u=vagrant n=ansible | TASK [application : Install Docker] ***********************************************************************************************
+2025-02-12 05:25:15,751 p=2570 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 05:25:15,758 p=2570 u=vagrant n=ansible | TASK [application : Install compose] **********************************************************************************************
+2025-02-12 05:25:16,569 p=2570 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 05:25:16,576 p=2570 u=vagrant n=ansible | TASK [application : Deploy microservices application with Docker Compose] *********************************************************
+2025-02-12 05:25:17,235 p=2570 u=vagrant n=ansible | changed: [192.168.50.11]
+2025-02-12 05:25:17,238 p=2570 u=vagrant n=ansible | PLAY [Install Apache and PostgreSQL on node02] ************************************************************************************
+2025-02-12 05:25:17,241 p=2570 u=vagrant n=ansible | TASK [Gathering Facts] ************************************************************************************************************
+2025-02-12 05:25:18,406 p=2570 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:25:18,410 p=2570 u=vagrant n=ansible | TASK [apache : Install Apache2] ***************************************************************************************************
+2025-02-12 05:25:20,206 p=2570 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:25:20,211 p=2570 u=vagrant n=ansible | TASK [apache : Ensure Apache is running] ******************************************************************************************
+2025-02-12 05:25:20,642 p=2570 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:25:20,648 p=2570 u=vagrant n=ansible | TASK [apache : Create a sample webpage] *******************************************************************************************
+2025-02-12 05:25:21,182 p=2570 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:25:21,186 p=2570 u=vagrant n=ansible | TASK [postgres : Install python3-psycopg2] ****************************************************************************************
+2025-02-12 05:25:21,986 p=2570 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:25:21,991 p=2570 u=vagrant n=ansible | TASK [postgres : Install PostgreSQL] **********************************************************************************************
+2025-02-12 05:25:23,725 p=2570 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:25:23,729 p=2570 u=vagrant n=ansible | TASK [postgres : Ensure PostgreSQL is running] ************************************************************************************
+2025-02-12 05:25:24,001 p=2570 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:25:24,009 p=2570 u=vagrant n=ansible | TASK [postgres : Create PostgreSQL database] **************************************************************************************
+2025-02-12 05:25:24,329 p=2570 u=vagrant n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: psycopg2.OperationalError: FATAL:  Peer authentication failed for user "********"
+2025-02-12 05:25:24,330 p=2570 u=vagrant n=ansible | fatal: [192.168.50.12]: FAILED! => changed=false 
+  msg: |-
+    unable to connect to database: FATAL:  Peer authentication failed for user "********"
+2025-02-12 05:25:24,331 p=2570 u=vagrant n=ansible | PLAY RECAP ************************************************************************************************************************
+2025-02-12 05:25:24,331 p=2570 u=vagrant n=ansible | 192.168.50.11              : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-02-12 05:25:24,331 p=2570 u=vagrant n=ansible | 192.168.50.12              : ok=7    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-02-12 05:43:17,574 p=4563 u=vagrant n=ansible | ERROR! couldn't resolve module/action 'community.postgresql.postgresql_user'. This often indicates a misspelling, missing collection, or incorrect module path.
+
+The error appears to be in '/vagrant/ansible01/roles/postgres/tasks/main.yaml': line 28, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+- name: Create user
+  ^ here
+
+2025-02-12 05:44:35,186 p=4630 u=vagrant n=ansible | ERROR! couldn't resolve module/action 'community.postgresql.postgresql_user'. This often indicates a misspelling, missing collection, or incorrect module path.
+
+The error appears to be in '/vagrant/ansible01/roles/postgres/tasks/main.yaml': line 28, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+- name: Create PostgreSQL user
+  ^ here
+
+2025-02-12 05:45:27,524 p=4675 u=vagrant n=ansible | Process install dependency map
+2025-02-12 05:45:27,525 p=4675 u=vagrant n=ansible | |
+2025-02-12 05:45:27,625 p=4675 u=vagrant n=ansible | /
+2025-02-12 05:45:27,727 p=4675 u=vagrant n=ansible | -
+2025-02-12 05:45:27,829 p=4675 u=vagrant n=ansible | \
+2025-02-12 05:45:27,930 p=4675 u=vagrant n=ansible | |
+2025-02-12 05:45:28,035 p=4675 u=vagrant n=ansible | /
+2025-02-12 05:45:28,137 p=4675 u=vagrant n=ansible | -
+2025-02-12 05:45:28,241 p=4675 u=vagrant n=ansible | \
+2025-02-12 05:45:28,342 p=4675 u=vagrant n=ansible | |
+2025-02-12 05:45:28,445 p=4675 u=vagrant n=ansible | /
+2025-02-12 05:45:28,546 p=4675 u=vagrant n=ansible | -
+2025-02-12 05:45:28,650 p=4675 u=vagrant n=ansible | \
+2025-02-12 05:45:28,796 p=4675 u=vagrant n=ansible | |
+2025-02-12 05:45:28,899 p=4675 u=vagrant n=ansible | /
+2025-02-12 05:45:28,999 p=4675 u=vagrant n=ansible | -
+2025-02-12 05:45:29,102 p=4675 u=vagrant n=ansible | \
+2025-02-12 05:45:29,203 p=4675 u=vagrant n=ansible | |
+2025-02-12 05:45:29,307 p=4675 u=vagrant n=ansible | /
+2025-02-12 05:45:29,408 p=4675 u=vagrant n=ansible | -
+2025-02-12 05:45:29,511 p=4675 u=vagrant n=ansible | \
+2025-02-12 05:45:29,614 p=4675 u=vagrant n=ansible | |
+2025-02-12 05:45:29,715 p=4675 u=vagrant n=ansible | /
+2025-02-12 05:45:29,817 p=4675 u=vagrant n=ansible | -
+2025-02-12 05:45:29,919 p=4675 u=vagrant n=ansible | \
+2025-02-12 05:45:30,022 p=4675 u=vagrant n=ansible | |
+2025-02-12 05:45:30,123 p=4675 u=vagrant n=ansible | /
+2025-02-12 05:45:30,224 p=4675 u=vagrant n=ansible | -
+2025-02-12 05:45:30,325 p=4675 u=vagrant n=ansible | \
+2025-02-12 05:45:30,427 p=4675 u=vagrant n=ansible | |
+2025-02-12 05:45:30,528 p=4675 u=vagrant n=ansible | /
+2025-02-12 05:45:30,631 p=4675 u=vagrant n=ansible | -
+2025-02-12 05:45:30,736 p=4675 u=vagrant n=ansible | \
+2025-02-12 05:45:30,838 p=4675 u=vagrant n=ansible | |
+2025-02-12 05:45:30,939 p=4675 u=vagrant n=ansible | /
+2025-02-12 05:45:31,042 p=4675 u=vagrant n=ansible | -
+2025-02-12 05:45:31,143 p=4675 u=vagrant n=ansible | \
+2025-02-12 05:45:31,244 p=4675 u=vagrant n=ansible | |
+2025-02-12 05:45:31,347 p=4675 u=vagrant n=ansible | /
+2025-02-12 05:45:31,480 p=4675 u=vagrant n=ansible | -
+2025-02-12 05:45:31,584 p=4675 u=vagrant n=ansible | \
+2025-02-12 05:45:31,684 p=4675 u=vagrant n=ansible | |
+2025-02-12 05:45:31,785 p=4675 u=vagrant n=ansible | /
+2025-02-12 05:45:31,889 p=4675 u=vagrant n=ansible | -
+2025-02-12 05:45:31,990 p=4675 u=vagrant n=ansible | \
+2025-02-12 05:45:32,093 p=4675 u=vagrant n=ansible | |
+2025-02-12 05:45:32,197 p=4675 u=vagrant n=ansible | /
+2025-02-12 05:45:32,300 p=4675 u=vagrant n=ansible | -
+2025-02-12 05:45:32,401 p=4675 u=vagrant n=ansible | \
+2025-02-12 05:45:32,521 p=4675 u=vagrant n=ansible | |
+2025-02-12 05:45:32,628 p=4675 u=vagrant n=ansible | /
+2025-02-12 05:45:32,732 p=4675 u=vagrant n=ansible | -
+2025-02-12 05:45:32,832 p=4675 u=vagrant n=ansible | \
+2025-02-12 05:45:32,934 p=4675 u=vagrant n=ansible | |
+2025-02-12 05:45:33,036 p=4675 u=vagrant n=ansible | /
+2025-02-12 05:45:33,139 p=4675 u=vagrant n=ansible | -
+2025-02-12 05:45:33,242 p=4675 u=vagrant n=ansible | \
+2025-02-12 05:45:33,343 p=4675 u=vagrant n=ansible | |
+2025-02-12 05:45:33,443 p=4675 u=vagrant n=ansible | /
+2025-02-12 05:45:33,545 p=4675 u=vagrant n=ansible | -
+2025-02-12 05:45:33,649 p=4675 u=vagrant n=ansible | \
+2025-02-12 05:45:33,753 p=4675 u=vagrant n=ansible | |
+2025-02-12 05:45:33,858 p=4675 u=vagrant n=ansible | /
+2025-02-12 05:45:33,959 p=4675 u=vagrant n=ansible | -
+2025-02-12 05:45:34,061 p=4675 u=vagrant n=ansible | \
+2025-02-12 05:45:34,162 p=4675 u=vagrant n=ansible | |
+2025-02-12 05:45:34,263 p=4675 u=vagrant n=ansible | /
+2025-02-12 05:45:34,364 p=4675 u=vagrant n=ansible | Starting collection install process
+2025-02-12 05:45:34,365 p=4675 u=vagrant n=ansible | |
+2025-02-12 05:45:34,466 p=4675 u=vagrant n=ansible | Installing 'community.postgresql:3.10.2' to '/home/vagrant/.ansible/collections/ansible_collections/community/postgresql'
+2025-02-12 05:45:34,467 p=4675 u=vagrant n=ansible | /
+2025-02-12 05:45:34,569 p=4675 u=vagrant n=ansible | -
+2025-02-12 05:45:34,673 p=4675 u=vagrant n=ansible | \
+2025-02-12 05:45:34,777 p=4675 u=vagrant n=ansible | |
+2025-02-12 05:45:34,878 p=4675 u=vagrant n=ansible | /
+2025-02-12 05:45:34,979 p=4675 u=vagrant n=ansible | -
+2025-02-12 05:45:35,082 p=4675 u=vagrant n=ansible | \
+2025-02-12 05:45:35,183 p=4675 u=vagrant n=ansible | |
+2025-02-12 05:45:35,284 p=4675 u=vagrant n=ansible | /
+2025-02-12 05:45:35,388 p=4675 u=vagrant n=ansible | -
+2025-02-12 05:45:35,490 p=4675 u=vagrant n=ansible | \
+2025-02-12 05:45:35,591 p=4675 u=vagrant n=ansible | |
+2025-02-12 05:45:35,694 p=4675 u=vagrant n=ansible | /
+2025-02-12 05:45:35,797 p=4675 u=vagrant n=ansible | -
+2025-02-12 05:45:35,897 p=4675 u=vagrant n=ansible | \
+2025-02-12 05:45:35,999 p=4675 u=vagrant n=ansible | |
+2025-02-12 05:45:36,102 p=4675 u=vagrant n=ansible | /
+2025-02-12 05:45:36,204 p=4675 u=vagrant n=ansible | -
+2025-02-12 05:45:36,306 p=4675 u=vagrant n=ansible | \
+2025-02-12 05:45:36,407 p=4675 u=vagrant n=ansible | |
+2025-02-12 05:45:36,510 p=4675 u=vagrant n=ansible | /
+2025-02-12 05:45:36,614 p=4675 u=vagrant n=ansible | -
+2025-02-12 05:45:36,716 p=4675 u=vagrant n=ansible | \
+2025-02-12 05:45:36,816 p=4675 u=vagrant n=ansible | |
+2025-02-12 05:45:36,917 p=4675 u=vagrant n=ansible | /
+2025-02-12 05:45:37,019 p=4675 u=vagrant n=ansible | -
+2025-02-12 05:45:37,119 p=4675 u=vagrant n=ansible | \
+2025-02-12 05:45:37,223 p=4675 u=vagrant n=ansible | |
+2025-02-12 05:45:37,326 p=4675 u=vagrant n=ansible | /
+2025-02-12 05:45:37,430 p=4675 u=vagrant n=ansible | -
+2025-02-12 05:45:37,531 p=4675 u=vagrant n=ansible | \
+2025-02-12 05:45:37,635 p=4675 u=vagrant n=ansible | |
+2025-02-12 05:45:37,735 p=4675 u=vagrant n=ansible | /
+2025-02-12 05:45:37,839 p=4675 u=vagrant n=ansible | -
+2025-02-12 05:45:37,939 p=4675 u=vagrant n=ansible | \
+2025-02-12 05:45:38,040 p=4675 u=vagrant n=ansible | |
+2025-02-12 05:45:38,142 p=4675 u=vagrant n=ansible | /
+2025-02-12 05:45:38,243 p=4675 u=vagrant n=ansible | -
+2025-02-12 05:45:38,346 p=4675 u=vagrant n=ansible | \
+2025-02-12 05:45:38,448 p=4675 u=vagrant n=ansible | |
+2025-02-12 05:45:38,548 p=4675 u=vagrant n=ansible | /
+2025-02-12 05:45:38,652 p=4675 u=vagrant n=ansible | -
+2025-02-12 05:45:38,756 p=4675 u=vagrant n=ansible | \
+2025-02-12 05:45:38,858 p=4675 u=vagrant n=ansible | |
+2025-02-12 05:45:38,962 p=4675 u=vagrant n=ansible | /
+2025-02-12 05:45:39,067 p=4675 u=vagrant n=ansible | -
+2025-02-12 05:45:39,168 p=4675 u=vagrant n=ansible | \
+2025-02-12 05:45:39,334 p=4675 u=vagrant n=ansible | |
+2025-02-12 05:45:39,436 p=4675 u=vagrant n=ansible | /
+2025-02-12 05:45:39,540 p=4675 u=vagrant n=ansible | -
+2025-02-12 05:45:39,644 p=4675 u=vagrant n=ansible | \
+2025-02-12 05:45:39,748 p=4675 u=vagrant n=ansible | |
+2025-02-12 05:45:39,858 p=4675 u=vagrant n=ansible | /
+2025-02-12 05:45:39,960 p=4675 u=vagrant n=ansible | -
+2025-02-12 05:45:40,063 p=4675 u=vagrant n=ansible | \
+2025-02-12 05:45:40,179 p=4675 u=vagrant n=ansible | |
+2025-02-12 05:45:40,391 p=4675 u=vagrant n=ansible | /
+2025-02-12 05:45:40,495 p=4675 u=vagrant n=ansible | -
+2025-02-12 05:45:40,598 p=4675 u=vagrant n=ansible | \
+2025-02-12 05:45:40,702 p=4675 u=vagrant n=ansible | |
+2025-02-12 05:45:40,806 p=4675 u=vagrant n=ansible | /
+2025-02-12 05:45:40,914 p=4675 u=vagrant n=ansible | -
+2025-02-12 05:45:41,016 p=4675 u=vagrant n=ansible | \
+2025-02-12 05:45:41,139 p=4675 u=vagrant n=ansible | |
+2025-02-12 05:45:41,240 p=4675 u=vagrant n=ansible | /
+2025-02-12 05:45:41,343 p=4675 u=vagrant n=ansible | -
+2025-02-12 05:45:41,531 p=4675 u=vagrant n=ansible | \
+2025-02-12 05:45:41,635 p=4675 u=vagrant n=ansible | |
+2025-02-12 05:45:41,738 p=4675 u=vagrant n=ansible | /
+2025-02-12 05:45:41,842 p=4675 u=vagrant n=ansible | -
+2025-02-12 05:45:41,944 p=4675 u=vagrant n=ansible | \
+2025-02-12 05:45:42,045 p=4675 u=vagrant n=ansible | |
+2025-02-12 05:45:42,149 p=4675 u=vagrant n=ansible | /
+2025-02-12 05:45:42,359 p=4675 u=vagrant n=ansible | -
+2025-02-12 05:45:42,461 p=4675 u=vagrant n=ansible | \
+2025-02-12 05:45:42,565 p=4675 u=vagrant n=ansible | |
+2025-02-12 05:45:42,669 p=4675 u=vagrant n=ansible | /
+2025-02-12 05:45:42,790 p=4675 u=vagrant n=ansible | -
+2025-02-12 05:45:42,891 p=4675 u=vagrant n=ansible | \
+2025-02-12 05:45:45,741 p=4696 u=vagrant n=ansible | PLAY [Deploy application, apache and postgres] ************************************************************************************
+2025-02-12 05:45:45,749 p=4696 u=vagrant n=ansible | TASK [Gathering Facts] ************************************************************************************************************
+2025-02-12 05:45:47,097 p=4696 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 05:45:47,104 p=4696 u=vagrant n=ansible | TASK [application : Update] *******************************************************************************************************
+2025-02-12 05:45:51,138 p=4696 u=vagrant n=ansible | changed: [192.168.50.11]
+2025-02-12 05:45:51,144 p=4696 u=vagrant n=ansible | TASK [application : Install Docker] ***********************************************************************************************
+2025-02-12 05:45:51,976 p=4696 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 05:45:51,982 p=4696 u=vagrant n=ansible | TASK [application : Install compose] **********************************************************************************************
+2025-02-12 05:45:52,716 p=4696 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 05:45:52,724 p=4696 u=vagrant n=ansible | TASK [application : Deploy microservices application with Docker Compose] *********************************************************
+2025-02-12 05:45:53,522 p=4696 u=vagrant n=ansible | changed: [192.168.50.11]
+2025-02-12 05:45:53,524 p=4696 u=vagrant n=ansible | PLAY [Install Apache and PostgreSQL on node02] ************************************************************************************
+2025-02-12 05:45:53,528 p=4696 u=vagrant n=ansible | TASK [Gathering Facts] ************************************************************************************************************
+2025-02-12 05:45:54,615 p=4696 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:45:54,620 p=4696 u=vagrant n=ansible | TASK [apache : Install Apache2] ***************************************************************************************************
+2025-02-12 05:46:03,155 p=4696 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:46:03,159 p=4696 u=vagrant n=ansible | TASK [apache : Ensure Apache is running] ******************************************************************************************
+2025-02-12 05:46:03,554 p=4696 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:46:03,559 p=4696 u=vagrant n=ansible | TASK [apache : Create a sample webpage] *******************************************************************************************
+2025-02-12 05:46:03,945 p=4696 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:46:03,949 p=4696 u=vagrant n=ansible | TASK [postgres : Install python3-psycopg2] ****************************************************************************************
+2025-02-12 05:46:04,617 p=4696 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:46:04,624 p=4696 u=vagrant n=ansible | TASK [postgres : Install utilities] ***********************************************************************************************
+2025-02-12 05:46:05,294 p=4696 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:46:05,298 p=4696 u=vagrant n=ansible | TASK [postgres : Install PostgreSQL] **********************************************************************************************
+2025-02-12 05:46:07,169 p=4696 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:46:07,175 p=4696 u=vagrant n=ansible | TASK [postgres : Ensure PostgreSQL is running] ************************************************************************************
+2025-02-12 05:46:07,428 p=4696 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:46:07,432 p=4696 u=vagrant n=ansible | TASK [postgres : Create PostgreSQL user] ******************************************************************************************
+2025-02-12 05:46:07,590 p=4696 u=vagrant n=ansible | fatal: [192.168.50.12]: FAILED! => 
+  msg: |-
+    Failed to set permissions on the temporary files Ansible needs to create when becoming an unprivileged user (rc: 1, err: chown: changing ownership of '/var/tmp/ansible-tmp-1739339167.4394207-51424399893440/': Operation not permitted
+    chown: changing ownership of '/var/tmp/ansible-tmp-1739339167.4394207-51424399893440/AnsiballZ_postgresql_user.py': Operation not permitted
+    }). For information on working around this, see https://docs.ansible.com/ansible/become.html#becoming-an-unprivileged-user
+2025-02-12 05:46:07,591 p=4696 u=vagrant n=ansible | PLAY RECAP ************************************************************************************************************************
+2025-02-12 05:46:07,591 p=4696 u=vagrant n=ansible | 192.168.50.11              : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-02-12 05:46:07,591 p=4696 u=vagrant n=ansible | 192.168.50.12              : ok=8    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-02-12 05:46:48,846 p=4891 u=vagrant n=ansible | PLAY [Deploy application, apache and postgres] ************************************************************************************
+2025-02-12 05:46:48,854 p=4891 u=vagrant n=ansible | TASK [Gathering Facts] ************************************************************************************************************
+2025-02-12 05:46:49,698 p=4891 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 05:46:49,705 p=4891 u=vagrant n=ansible | TASK [application : Update] *******************************************************************************************************
+2025-02-12 05:46:51,844 p=4891 u=vagrant n=ansible | changed: [192.168.50.11]
+2025-02-12 05:46:51,851 p=4891 u=vagrant n=ansible | TASK [application : Install Docker] ***********************************************************************************************
+2025-02-12 05:46:52,560 p=4891 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 05:46:52,566 p=4891 u=vagrant n=ansible | TASK [application : Install compose] **********************************************************************************************
+2025-02-12 05:46:53,271 p=4891 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 05:46:53,277 p=4891 u=vagrant n=ansible | TASK [application : Deploy microservices application with Docker Compose] *********************************************************
+2025-02-12 05:46:53,830 p=4891 u=vagrant n=ansible | changed: [192.168.50.11]
+2025-02-12 05:46:53,832 p=4891 u=vagrant n=ansible | PLAY [Install Apache and PostgreSQL on node02] ************************************************************************************
+2025-02-12 05:46:53,836 p=4891 u=vagrant n=ansible | TASK [Gathering Facts] ************************************************************************************************************
+2025-02-12 05:46:54,428 p=4891 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:46:54,432 p=4891 u=vagrant n=ansible | TASK [apache : Install Apache2] ***************************************************************************************************
+2025-02-12 05:46:56,526 p=4891 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:46:56,530 p=4891 u=vagrant n=ansible | TASK [apache : Ensure Apache is running] ******************************************************************************************
+2025-02-12 05:46:56,907 p=4891 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:46:56,911 p=4891 u=vagrant n=ansible | TASK [apache : Create a sample webpage] *******************************************************************************************
+2025-02-12 05:46:57,321 p=4891 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:46:57,326 p=4891 u=vagrant n=ansible | TASK [postgres : Install python3-psycopg2] ****************************************************************************************
+2025-02-12 05:46:57,978 p=4891 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:46:57,984 p=4891 u=vagrant n=ansible | TASK [postgres : Utl] *************************************************************************************************************
+2025-02-12 05:46:58,458 p=4891 u=vagrant n=ansible | fatal: [192.168.50.12]: FAILED! => changed=false 
+  msg: No package matching 'python3-psucopg2' is available
+2025-02-12 05:46:58,459 p=4891 u=vagrant n=ansible | PLAY RECAP ************************************************************************************************************************
+2025-02-12 05:46:58,459 p=4891 u=vagrant n=ansible | 192.168.50.11              : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-02-12 05:46:58,459 p=4891 u=vagrant n=ansible | 192.168.50.12              : ok=5    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-02-12 05:47:13,245 p=5024 u=vagrant n=ansible | PLAY [Deploy application, apache and postgres] ************************************************************************************
+2025-02-12 05:47:13,253 p=5024 u=vagrant n=ansible | TASK [Gathering Facts] ************************************************************************************************************
+2025-02-12 05:47:14,092 p=5024 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 05:47:14,101 p=5024 u=vagrant n=ansible | TASK [application : Update] *******************************************************************************************************
+2025-02-12 05:47:15,908 p=5024 u=vagrant n=ansible | changed: [192.168.50.11]
+2025-02-12 05:47:15,915 p=5024 u=vagrant n=ansible | TASK [application : Install Docker] ***********************************************************************************************
+2025-02-12 05:47:16,667 p=5024 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 05:47:16,673 p=5024 u=vagrant n=ansible | TASK [application : Install compose] **********************************************************************************************
+2025-02-12 05:47:17,405 p=5024 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 05:47:17,413 p=5024 u=vagrant n=ansible | TASK [application : Deploy microservices application with Docker Compose] *********************************************************
+2025-02-12 05:47:17,987 p=5024 u=vagrant n=ansible | changed: [192.168.50.11]
+2025-02-12 05:47:17,989 p=5024 u=vagrant n=ansible | PLAY [Install Apache and PostgreSQL on node02] ************************************************************************************
+2025-02-12 05:47:17,992 p=5024 u=vagrant n=ansible | TASK [Gathering Facts] ************************************************************************************************************
+2025-02-12 05:47:18,706 p=5024 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:47:18,712 p=5024 u=vagrant n=ansible | TASK [apache : Install Apache2] ***************************************************************************************************
+2025-02-12 05:47:20,592 p=5024 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:47:20,599 p=5024 u=vagrant n=ansible | TASK [apache : Ensure Apache is running] ******************************************************************************************
+2025-02-12 05:47:20,982 p=5024 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:47:20,987 p=5024 u=vagrant n=ansible | TASK [apache : Create a sample webpage] *******************************************************************************************
+2025-02-12 05:47:21,413 p=5024 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:47:21,418 p=5024 u=vagrant n=ansible | TASK [postgres : Install python3-psycopg2] ****************************************************************************************
+2025-02-12 05:47:22,130 p=5024 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:47:22,134 p=5024 u=vagrant n=ansible | TASK [postgres : Install PostgreSQL] **********************************************************************************************
+2025-02-12 05:47:24,025 p=5024 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:47:24,031 p=5024 u=vagrant n=ansible | TASK [postgres : Ensure PostgreSQL is running] ************************************************************************************
+2025-02-12 05:47:24,261 p=5024 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:47:24,266 p=5024 u=vagrant n=ansible | TASK [postgres : Create PostgreSQL database] **************************************************************************************
+2025-02-12 05:47:24,501 p=5024 u=vagrant n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: psycopg2.OperationalError: FATAL:  Peer authentication failed for user "********"
+2025-02-12 05:47:24,502 p=5024 u=vagrant n=ansible | fatal: [192.168.50.12]: FAILED! => changed=false 
+  msg: |-
+    unable to connect to database: FATAL:  Peer authentication failed for user "********"
+2025-02-12 05:47:24,503 p=5024 u=vagrant n=ansible | PLAY RECAP ************************************************************************************************************************
+2025-02-12 05:47:24,503 p=5024 u=vagrant n=ansible | 192.168.50.11              : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-02-12 05:47:24,503 p=5024 u=vagrant n=ansible | 192.168.50.12              : ok=7    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-02-12 05:49:14,502 p=5252 u=vagrant n=ansible | PLAY [Deploy application, apache and postgres] ************************************************************************************
+2025-02-12 05:49:14,513 p=5252 u=vagrant n=ansible | TASK [Gathering Facts] ************************************************************************************************************
+2025-02-12 05:49:15,780 p=5252 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 05:49:15,786 p=5252 u=vagrant n=ansible | TASK [application : Update] *******************************************************************************************************
+2025-02-12 05:49:17,869 p=5252 u=vagrant n=ansible | changed: [192.168.50.11]
+2025-02-12 05:49:17,875 p=5252 u=vagrant n=ansible | TASK [application : Install Docker] ***********************************************************************************************
+2025-02-12 05:49:18,601 p=5252 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 05:49:18,607 p=5252 u=vagrant n=ansible | TASK [application : Install compose] **********************************************************************************************
+2025-02-12 05:49:19,336 p=5252 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 05:49:19,344 p=5252 u=vagrant n=ansible | TASK [application : Deploy microservices application with Docker Compose] *********************************************************
+2025-02-12 05:49:19,908 p=5252 u=vagrant n=ansible | changed: [192.168.50.11]
+2025-02-12 05:49:19,910 p=5252 u=vagrant n=ansible | PLAY [Install Apache and PostgreSQL on node02] ************************************************************************************
+2025-02-12 05:49:19,913 p=5252 u=vagrant n=ansible | TASK [Gathering Facts] ************************************************************************************************************
+2025-02-12 05:49:20,903 p=5252 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:49:20,908 p=5252 u=vagrant n=ansible | TASK [apache : Install Apache2] ***************************************************************************************************
+2025-02-12 05:49:23,013 p=5252 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:49:23,019 p=5252 u=vagrant n=ansible | TASK [apache : Ensure Apache is running] ******************************************************************************************
+2025-02-12 05:49:23,398 p=5252 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:49:23,403 p=5252 u=vagrant n=ansible | TASK [apache : Create a sample webpage] *******************************************************************************************
+2025-02-12 05:49:23,790 p=5252 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:49:23,794 p=5252 u=vagrant n=ansible | TASK [postgres : Install python3-psycopg2] ****************************************************************************************
+2025-02-12 05:49:24,449 p=5252 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:49:24,454 p=5252 u=vagrant n=ansible | TASK [postgres : Install PostgreSQL] **********************************************************************************************
+2025-02-12 05:49:26,289 p=5252 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:49:26,294 p=5252 u=vagrant n=ansible | TASK [postgres : Ensure PostgreSQL is running] ************************************************************************************
+2025-02-12 05:49:26,527 p=5252 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:49:26,532 p=5252 u=vagrant n=ansible | TASK [postgres : Create PostgreSQL database] **************************************************************************************
+2025-02-12 05:49:26,765 p=5252 u=vagrant n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: psycopg2.OperationalError: FATAL:  Peer authentication failed for user "********"
+2025-02-12 05:49:26,766 p=5252 u=vagrant n=ansible | fatal: [192.168.50.12]: FAILED! => changed=false 
+  msg: |-
+    unable to connect to database: FATAL:  Peer authentication failed for user "********"
+2025-02-12 05:49:26,767 p=5252 u=vagrant n=ansible | PLAY RECAP ************************************************************************************************************************
+2025-02-12 05:49:26,767 p=5252 u=vagrant n=ansible | 192.168.50.11              : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-02-12 05:49:26,767 p=5252 u=vagrant n=ansible | 192.168.50.12              : ok=7    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-02-12 05:49:54,529 p=5421 u=vagrant n=ansible | PLAY [Deploy application, apache and postgres] ************************************************************************************
+2025-02-12 05:49:54,538 p=5421 u=vagrant n=ansible | TASK [Gathering Facts] ************************************************************************************************************
+2025-02-12 05:49:55,362 p=5421 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 05:49:55,370 p=5421 u=vagrant n=ansible | TASK [application : Update] *******************************************************************************************************
+2025-02-12 05:49:57,187 p=5421 u=vagrant n=ansible | changed: [192.168.50.11]
+2025-02-12 05:49:57,195 p=5421 u=vagrant n=ansible | TASK [application : Install Docker] ***********************************************************************************************
+2025-02-12 05:49:57,925 p=5421 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 05:49:57,935 p=5421 u=vagrant n=ansible | TASK [application : Install compose] **********************************************************************************************
+2025-02-12 05:49:58,705 p=5421 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 05:49:58,715 p=5421 u=vagrant n=ansible | TASK [application : Deploy microservices application with Docker Compose] *********************************************************
+2025-02-12 05:49:59,262 p=5421 u=vagrant n=ansible | changed: [192.168.50.11]
+2025-02-12 05:49:59,265 p=5421 u=vagrant n=ansible | PLAY [Install Apache and PostgreSQL on node02] ************************************************************************************
+2025-02-12 05:49:59,268 p=5421 u=vagrant n=ansible | TASK [Gathering Facts] ************************************************************************************************************
+2025-02-12 05:49:59,923 p=5421 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:49:59,927 p=5421 u=vagrant n=ansible | TASK [apache : Install Apache2] ***************************************************************************************************
+2025-02-12 05:50:01,803 p=5421 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:50:01,810 p=5421 u=vagrant n=ansible | TASK [apache : Ensure Apache is running] ******************************************************************************************
+2025-02-12 05:50:02,190 p=5421 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:50:02,194 p=5421 u=vagrant n=ansible | TASK [apache : Create a sample webpage] *******************************************************************************************
+2025-02-12 05:50:02,604 p=5421 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:50:02,608 p=5421 u=vagrant n=ansible | TASK [postgres : Install python3-psycopg2] ****************************************************************************************
+2025-02-12 05:50:03,258 p=5421 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:50:03,263 p=5421 u=vagrant n=ansible | TASK [postgres : Install PostgreSQL] **********************************************************************************************
+2025-02-12 05:50:05,170 p=5421 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:50:05,174 p=5421 u=vagrant n=ansible | TASK [postgres : Ensure PostgreSQL is running] ************************************************************************************
+2025-02-12 05:50:05,411 p=5421 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:50:05,417 p=5421 u=vagrant n=ansible | TASK [postgres : Create PostgreSQL database] **************************************************************************************
+2025-02-12 05:50:05,649 p=5421 u=vagrant n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: psycopg2.OperationalError: FATAL:  password authentication failed for user "********"
+2025-02-12 05:50:05,650 p=5421 u=vagrant n=ansible | fatal: [192.168.50.12]: FAILED! => changed=false 
+  msg: |-
+    unable to connect to database: FATAL:  password authentication failed for user "********"
+2025-02-12 05:50:05,650 p=5421 u=vagrant n=ansible | PLAY RECAP ************************************************************************************************************************
+2025-02-12 05:50:05,650 p=5421 u=vagrant n=ansible | 192.168.50.11              : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-02-12 05:50:05,651 p=5421 u=vagrant n=ansible | 192.168.50.12              : ok=7    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-02-12 05:50:38,921 p=5589 u=vagrant n=ansible | PLAY [Deploy application, apache and postgres] ************************************************************************************
+2025-02-12 05:50:38,929 p=5589 u=vagrant n=ansible | TASK [Gathering Facts] ************************************************************************************************************
+2025-02-12 05:50:39,777 p=5589 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 05:50:39,783 p=5589 u=vagrant n=ansible | TASK [application : Update] *******************************************************************************************************
+2025-02-12 05:50:41,839 p=5589 u=vagrant n=ansible | changed: [192.168.50.11]
+2025-02-12 05:50:41,845 p=5589 u=vagrant n=ansible | TASK [application : Install Docker] ***********************************************************************************************
+2025-02-12 05:50:42,594 p=5589 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 05:50:42,602 p=5589 u=vagrant n=ansible | TASK [application : Install compose] **********************************************************************************************
+2025-02-12 05:50:43,330 p=5589 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 05:50:43,336 p=5589 u=vagrant n=ansible | TASK [application : Deploy microservices application with Docker Compose] *********************************************************
+2025-02-12 05:50:43,893 p=5589 u=vagrant n=ansible | changed: [192.168.50.11]
+2025-02-12 05:50:43,895 p=5589 u=vagrant n=ansible | PLAY [Install Apache and PostgreSQL on node02] ************************************************************************************
+2025-02-12 05:50:43,898 p=5589 u=vagrant n=ansible | TASK [Gathering Facts] ************************************************************************************************************
+2025-02-12 05:50:44,506 p=5589 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:50:44,510 p=5589 u=vagrant n=ansible | TASK [apache : Install Apache2] ***************************************************************************************************
+2025-02-12 05:50:46,530 p=5589 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:50:46,535 p=5589 u=vagrant n=ansible | TASK [apache : Ensure Apache is running] ******************************************************************************************
+2025-02-12 05:50:46,916 p=5589 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:50:46,922 p=5589 u=vagrant n=ansible | TASK [apache : Create a sample webpage] *******************************************************************************************
+2025-02-12 05:50:47,321 p=5589 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:50:47,326 p=5589 u=vagrant n=ansible | TASK [postgres : Install python3-psycopg2] ****************************************************************************************
+2025-02-12 05:50:48,034 p=5589 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:50:48,038 p=5589 u=vagrant n=ansible | TASK [postgres : Install PostgreSQL] **********************************************************************************************
+2025-02-12 05:50:49,915 p=5589 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:50:49,919 p=5589 u=vagrant n=ansible | TASK [postgres : Ensure PostgreSQL is running] ************************************************************************************
+2025-02-12 05:50:50,158 p=5589 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:50:50,162 p=5589 u=vagrant n=ansible | TASK [postgres : Create PostgreSQL database] **************************************************************************************
+2025-02-12 05:50:50,306 p=5589 u=vagrant n=ansible | fatal: [192.168.50.12]: FAILED! => 
+  msg: |-
+    Failed to set permissions on the temporary files Ansible needs to create when becoming an unprivileged user (rc: 1, err: chown: changing ownership of '/var/tmp/ansible-tmp-1739339450.1699867-59532890561328/': Operation not permitted
+    chown: changing ownership of '/var/tmp/ansible-tmp-1739339450.1699867-59532890561328/AnsiballZ_postgresql_db.py': Operation not permitted
+    }). For information on working around this, see https://docs.ansible.com/ansible/become.html#becoming-an-unprivileged-user
+2025-02-12 05:50:50,307 p=5589 u=vagrant n=ansible | PLAY RECAP ************************************************************************************************************************
+2025-02-12 05:50:50,307 p=5589 u=vagrant n=ansible | 192.168.50.11              : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-02-12 05:50:50,307 p=5589 u=vagrant n=ansible | 192.168.50.12              : ok=7    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-02-12 05:51:35,171 p=5765 u=vagrant n=ansible | PLAY [Deploy application, apache and postgres] ************************************************************************************
+2025-02-12 05:51:35,179 p=5765 u=vagrant n=ansible | TASK [Gathering Facts] ************************************************************************************************************
+2025-02-12 05:51:36,015 p=5765 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 05:51:36,021 p=5765 u=vagrant n=ansible | TASK [application : Update] *******************************************************************************************************
+2025-02-12 05:51:37,945 p=5765 u=vagrant n=ansible | changed: [192.168.50.11]
+2025-02-12 05:51:37,951 p=5765 u=vagrant n=ansible | TASK [application : Install Docker] ***********************************************************************************************
+2025-02-12 05:51:38,703 p=5765 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 05:51:38,710 p=5765 u=vagrant n=ansible | TASK [application : Install compose] **********************************************************************************************
+2025-02-12 05:51:39,448 p=5765 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 05:51:39,454 p=5765 u=vagrant n=ansible | TASK [application : Deploy microservices application with Docker Compose] *********************************************************
+2025-02-12 05:51:40,031 p=5765 u=vagrant n=ansible | changed: [192.168.50.11]
+2025-02-12 05:51:40,033 p=5765 u=vagrant n=ansible | PLAY [Install Apache and PostgreSQL on node02] ************************************************************************************
+2025-02-12 05:51:40,036 p=5765 u=vagrant n=ansible | TASK [Gathering Facts] ************************************************************************************************************
+2025-02-12 05:51:40,820 p=5765 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:51:40,825 p=5765 u=vagrant n=ansible | TASK [apache : Install Apache2] ***************************************************************************************************
+2025-02-12 05:51:43,077 p=5765 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:51:43,082 p=5765 u=vagrant n=ansible | TASK [apache : Ensure Apache is running] ******************************************************************************************
+2025-02-12 05:51:43,464 p=5765 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:51:43,468 p=5765 u=vagrant n=ansible | TASK [apache : Create a sample webpage] *******************************************************************************************
+2025-02-12 05:51:43,858 p=5765 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:51:43,863 p=5765 u=vagrant n=ansible | TASK [postgres : Install python3-psycopg2] ****************************************************************************************
+2025-02-12 05:51:44,549 p=5765 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:51:44,554 p=5765 u=vagrant n=ansible | TASK [postgres : Install PostgreSQL] **********************************************************************************************
+2025-02-12 05:51:46,597 p=5765 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:51:46,603 p=5765 u=vagrant n=ansible | TASK [postgres : Ensure PostgreSQL is running] ************************************************************************************
+2025-02-12 05:51:46,841 p=5765 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:51:46,845 p=5765 u=vagrant n=ansible | TASK [postgres : Create PostgreSQL database] **************************************************************************************
+2025-02-12 05:51:46,985 p=5765 u=vagrant n=ansible | fatal: [192.168.50.12]: FAILED! => 
+  msg: |-
+    Failed to set permissions on the temporary files Ansible needs to create when becoming an unprivileged user (rc: 1, err: chown: changing ownership of '/var/tmp/ansible-tmp-1739339506.851575-198511620538332/': Operation not permitted
+    chown: changing ownership of '/var/tmp/ansible-tmp-1739339506.851575-198511620538332/AnsiballZ_postgresql_db.py': Operation not permitted
+    }). For information on working around this, see https://docs.ansible.com/ansible/become.html#becoming-an-unprivileged-user
+2025-02-12 05:51:46,986 p=5765 u=vagrant n=ansible | PLAY RECAP ************************************************************************************************************************
+2025-02-12 05:51:46,986 p=5765 u=vagrant n=ansible | 192.168.50.11              : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-02-12 05:51:46,986 p=5765 u=vagrant n=ansible | 192.168.50.12              : ok=7    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-02-12 05:55:33,839 p=6089 u=vagrant n=ansible | PLAY [Deploy application, apache and postgres] ************************************************************************************
+2025-02-12 05:55:33,846 p=6089 u=vagrant n=ansible | TASK [Gathering Facts] ************************************************************************************************************
+2025-02-12 05:55:35,101 p=6089 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 05:55:35,108 p=6089 u=vagrant n=ansible | TASK [application : Update] *******************************************************************************************************
+2025-02-12 05:55:37,223 p=6089 u=vagrant n=ansible | changed: [192.168.50.11]
+2025-02-12 05:55:37,231 p=6089 u=vagrant n=ansible | TASK [application : Install Docker] ***********************************************************************************************
+2025-02-12 05:55:37,974 p=6089 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 05:55:37,981 p=6089 u=vagrant n=ansible | TASK [application : Install compose] **********************************************************************************************
+2025-02-12 05:55:38,643 p=6089 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 05:55:38,649 p=6089 u=vagrant n=ansible | TASK [application : Deploy microservices application with Docker Compose] *********************************************************
+2025-02-12 05:55:39,139 p=6089 u=vagrant n=ansible | changed: [192.168.50.11]
+2025-02-12 05:55:39,141 p=6089 u=vagrant n=ansible | PLAY [Install Apache and PostgreSQL on node02] ************************************************************************************
+2025-02-12 05:55:39,144 p=6089 u=vagrant n=ansible | TASK [Gathering Facts] ************************************************************************************************************
+2025-02-12 05:55:40,103 p=6089 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:55:40,107 p=6089 u=vagrant n=ansible | TASK [apache : Install Apache2] ***************************************************************************************************
+2025-02-12 05:55:47,146 p=6089 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:55:47,150 p=6089 u=vagrant n=ansible | TASK [apache : Ensure Apache is running] ******************************************************************************************
+2025-02-12 05:55:47,505 p=6089 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:55:47,510 p=6089 u=vagrant n=ansible | TASK [apache : Create a sample webpage] *******************************************************************************************
+2025-02-12 05:55:47,870 p=6089 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:55:47,874 p=6089 u=vagrant n=ansible | TASK [postgres : Install python3-psycopg2] ****************************************************************************************
+2025-02-12 05:55:48,562 p=6089 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:55:48,566 p=6089 u=vagrant n=ansible | TASK [postgres : Install PostgreSQL] **********************************************************************************************
+2025-02-12 05:55:50,287 p=6089 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:55:50,292 p=6089 u=vagrant n=ansible | TASK [postgres : Ensure PostgreSQL is running] ************************************************************************************
+2025-02-12 05:55:50,513 p=6089 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:55:50,518 p=6089 u=vagrant n=ansible | TASK [postgres : utility] *********************************************************************************************************
+2025-02-12 05:55:50,938 p=6089 u=vagrant n=ansible | fatal: [192.168.50.12]: FAILED! => changed=false 
+  msg: No package matching 'python3-pycopg2' is available
+2025-02-12 05:55:50,939 p=6089 u=vagrant n=ansible | PLAY RECAP ************************************************************************************************************************
+2025-02-12 05:55:50,940 p=6089 u=vagrant n=ansible | 192.168.50.11              : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-02-12 05:55:50,940 p=6089 u=vagrant n=ansible | 192.168.50.12              : ok=7    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-02-12 05:56:49,146 p=6286 u=vagrant n=ansible | PLAY [Deploy application, apache and postgres] ************************************************************************************
+2025-02-12 05:56:49,153 p=6286 u=vagrant n=ansible | TASK [Gathering Facts] ************************************************************************************************************
+2025-02-12 05:56:50,248 p=6286 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 05:56:50,254 p=6286 u=vagrant n=ansible | TASK [application : Update] *******************************************************************************************************
+2025-02-12 05:56:52,422 p=6286 u=vagrant n=ansible | changed: [192.168.50.11]
+2025-02-12 05:56:52,428 p=6286 u=vagrant n=ansible | TASK [application : Install Docker] ***********************************************************************************************
+2025-02-12 05:56:53,060 p=6286 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 05:56:53,066 p=6286 u=vagrant n=ansible | TASK [application : Install compose] **********************************************************************************************
+2025-02-12 05:56:53,705 p=6286 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 05:56:53,714 p=6286 u=vagrant n=ansible | TASK [application : Deploy microservices application with Docker Compose] *********************************************************
+2025-02-12 05:56:54,231 p=6286 u=vagrant n=ansible | changed: [192.168.50.11]
+2025-02-12 05:56:54,234 p=6286 u=vagrant n=ansible | PLAY [Install Apache and PostgreSQL on node02] ************************************************************************************
+2025-02-12 05:56:54,239 p=6286 u=vagrant n=ansible | TASK [Gathering Facts] ************************************************************************************************************
+2025-02-12 05:56:55,153 p=6286 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:56:55,158 p=6286 u=vagrant n=ansible | TASK [apache : Install Apache2] ***************************************************************************************************
+2025-02-12 05:56:57,145 p=6286 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:56:57,150 p=6286 u=vagrant n=ansible | TASK [apache : Ensure Apache is running] ******************************************************************************************
+2025-02-12 05:56:57,502 p=6286 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:56:57,506 p=6286 u=vagrant n=ansible | TASK [apache : Create a sample webpage] *******************************************************************************************
+2025-02-12 05:56:57,869 p=6286 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:56:57,874 p=6286 u=vagrant n=ansible | TASK [postgres : Install python3-psycopg2] ****************************************************************************************
+2025-02-12 05:56:58,460 p=6286 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:56:58,464 p=6286 u=vagrant n=ansible | TASK [postgres : Install PostgreSQL] **********************************************************************************************
+2025-02-12 05:57:00,254 p=6286 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:57:00,258 p=6286 u=vagrant n=ansible | TASK [postgres : Ensure PostgreSQL is running] ************************************************************************************
+2025-02-12 05:57:00,496 p=6286 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:57:00,503 p=6286 u=vagrant n=ansible | TASK [postgres : utility] *********************************************************************************************************
+2025-02-12 05:57:01,129 p=6286 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 05:57:01,134 p=6286 u=vagrant n=ansible | TASK [postgres : Create PostgreSQL database] **************************************************************************************
+2025-02-12 05:57:01,286 p=6286 u=vagrant n=ansible | fatal: [192.168.50.12]: FAILED! => 
+  msg: |-
+    Failed to set permissions on the temporary files Ansible needs to create when becoming an unprivileged user (rc: 1, err: chown: changing ownership of '/var/tmp/ansible-tmp-1739339821.1410677-264669786188200/': Operation not permitted
+    chown: changing ownership of '/var/tmp/ansible-tmp-1739339821.1410677-264669786188200/AnsiballZ_postgresql_db.py': Operation not permitted
+    }). For information on working around this, see https://docs.ansible.com/ansible/become.html#becoming-an-unprivileged-user
+2025-02-12 05:57:01,287 p=6286 u=vagrant n=ansible | PLAY RECAP ************************************************************************************************************************
+2025-02-12 05:57:01,287 p=6286 u=vagrant n=ansible | 192.168.50.11              : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-02-12 05:57:01,287 p=6286 u=vagrant n=ansible | 192.168.50.12              : ok=8    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-02-12 06:03:43,736 p=6764 u=vagrant n=ansible | PLAY [Deploy application, apache and postgres] ************************************************************************************
+2025-02-12 06:03:43,743 p=6764 u=vagrant n=ansible | TASK [Gathering Facts] ************************************************************************************************************
+2025-02-12 06:03:44,932 p=6764 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 06:03:44,938 p=6764 u=vagrant n=ansible | TASK [application : Update] *******************************************************************************************************
+2025-02-12 06:03:51,896 p=6764 u=vagrant n=ansible | changed: [192.168.50.11]
+2025-02-12 06:03:51,902 p=6764 u=vagrant n=ansible | TASK [application : Install Docker] ***********************************************************************************************
+2025-02-12 06:03:52,543 p=6764 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 06:03:52,554 p=6764 u=vagrant n=ansible | TASK [application : Install compose] **********************************************************************************************
+2025-02-12 06:03:53,219 p=6764 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 06:03:53,227 p=6764 u=vagrant n=ansible | TASK [application : Deploy microservices application with Docker Compose] *********************************************************
+2025-02-12 06:03:53,779 p=6764 u=vagrant n=ansible | changed: [192.168.50.11]
+2025-02-12 06:03:53,782 p=6764 u=vagrant n=ansible | PLAY [Install Apache and PostgreSQL on node02] ************************************************************************************
+2025-02-12 06:03:53,785 p=6764 u=vagrant n=ansible | TASK [Gathering Facts] ************************************************************************************************************
+2025-02-12 06:03:54,702 p=6764 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 06:03:54,706 p=6764 u=vagrant n=ansible | TASK [apache : Install Apache2] ***************************************************************************************************
+2025-02-12 06:03:56,658 p=6764 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 06:03:56,663 p=6764 u=vagrant n=ansible | TASK [apache : Ensure Apache is running] ******************************************************************************************
+2025-02-12 06:03:57,018 p=6764 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 06:03:57,024 p=6764 u=vagrant n=ansible | TASK [apache : Create a sample webpage] *******************************************************************************************
+2025-02-12 06:03:57,418 p=6764 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 06:03:57,422 p=6764 u=vagrant n=ansible | TASK [postgres : Install python3-psycopg2] ****************************************************************************************
+2025-02-12 06:03:58,043 p=6764 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 06:03:58,047 p=6764 u=vagrant n=ansible | TASK [postgres : Install PostgreSQL] **********************************************************************************************
+2025-02-12 06:03:59,794 p=6764 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 06:03:59,798 p=6764 u=vagrant n=ansible | TASK [postgres : Ensure PostgreSQL is running] ************************************************************************************
+2025-02-12 06:04:00,028 p=6764 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 06:04:00,032 p=6764 u=vagrant n=ansible | TASK [postgres : Create PostgreSQL database] **************************************************************************************
+2025-02-12 06:04:00,280 p=6764 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 06:04:00,284 p=6764 u=vagrant n=ansible | TASK [postgres : Create a table and insert data into PostgreSQL] ******************************************************************
+2025-02-12 06:04:00,524 p=6764 u=vagrant n=ansible | changed: [192.168.50.12]
+2025-02-12 06:04:00,525 p=6764 u=vagrant n=ansible | PLAY RECAP ************************************************************************************************************************
+2025-02-12 06:04:00,525 p=6764 u=vagrant n=ansible | 192.168.50.11              : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-02-12 06:04:00,525 p=6764 u=vagrant n=ansible | 192.168.50.12              : ok=9    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-02-12 06:17:18,846 p=7587 u=vagrant n=ansible | PLAY [Deploy application, apache and postgres] ************************************************************************************
+2025-02-12 06:17:18,853 p=7587 u=vagrant n=ansible | TASK [Gathering Facts] ************************************************************************************************************
+2025-02-12 06:17:20,078 p=7587 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 06:17:20,085 p=7587 u=vagrant n=ansible | TASK [application : Update] *******************************************************************************************************
+2025-02-12 06:17:21,886 p=7587 u=vagrant n=ansible | changed: [192.168.50.11]
+2025-02-12 06:17:21,895 p=7587 u=vagrant n=ansible | TASK [application : Install Docker] ***********************************************************************************************
+2025-02-12 06:17:22,542 p=7587 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 06:17:22,551 p=7587 u=vagrant n=ansible | TASK [application : Install compose] **********************************************************************************************
+2025-02-12 06:17:23,191 p=7587 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 06:17:23,200 p=7587 u=vagrant n=ansible | TASK [application : Deploy microservices application with Docker Compose] *********************************************************
+2025-02-12 06:17:23,688 p=7587 u=vagrant n=ansible | changed: [192.168.50.11]
+2025-02-12 06:17:23,690 p=7587 u=vagrant n=ansible | PLAY [Install Apache and PostgreSQL on node02] ************************************************************************************
+2025-02-12 06:17:23,693 p=7587 u=vagrant n=ansible | TASK [Gathering Facts] ************************************************************************************************************
+2025-02-12 06:17:24,605 p=7587 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 06:17:24,609 p=7587 u=vagrant n=ansible | TASK [apache : Install Apache2] ***************************************************************************************************
+2025-02-12 06:17:26,411 p=7587 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 06:17:26,415 p=7587 u=vagrant n=ansible | TASK [apache : Ensure Apache is running] ******************************************************************************************
+2025-02-12 06:17:26,760 p=7587 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 06:17:26,764 p=7587 u=vagrant n=ansible | TASK [postgres : Install python3-psycopg2] ****************************************************************************************
+2025-02-12 06:17:27,381 p=7587 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 06:17:27,387 p=7587 u=vagrant n=ansible | TASK [postgres : Install PostgreSQL] **********************************************************************************************
+2025-02-12 06:17:28,964 p=7587 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 06:17:28,969 p=7587 u=vagrant n=ansible | TASK [postgres : Ensure PostgreSQL is running] ************************************************************************************
+2025-02-12 06:17:29,188 p=7587 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 06:17:29,192 p=7587 u=vagrant n=ansible | TASK [postgres : Create PostgreSQL database] **************************************************************************************
+2025-02-12 06:17:29,427 p=7587 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 06:17:29,431 p=7587 u=vagrant n=ansible | TASK [postgres : Create a table and insert data into PostgreSQL] ******************************************************************
+2025-02-12 06:17:29,644 p=7587 u=vagrant n=ansible | changed: [192.168.50.12]
+2025-02-12 06:17:29,644 p=7587 u=vagrant n=ansible | PLAY RECAP ************************************************************************************************************************
+2025-02-12 06:17:29,645 p=7587 u=vagrant n=ansible | 192.168.50.11              : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-02-12 06:17:29,645 p=7587 u=vagrant n=ansible | 192.168.50.12              : ok=8    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-02-12 06:19:30,636 p=7824 u=vagrant n=ansible | PLAY [Deploy application, apache and postgres] ************************************************************************************
+2025-02-12 06:19:30,644 p=7824 u=vagrant n=ansible | TASK [Gathering Facts] ************************************************************************************************************
+2025-02-12 06:19:31,793 p=7824 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 06:19:31,799 p=7824 u=vagrant n=ansible | TASK [application : Update] *******************************************************************************************************
+2025-02-12 06:19:33,827 p=7824 u=vagrant n=ansible | changed: [192.168.50.11]
+2025-02-12 06:19:33,833 p=7824 u=vagrant n=ansible | TASK [application : Install Docker] ***********************************************************************************************
+2025-02-12 06:19:34,485 p=7824 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 06:19:34,494 p=7824 u=vagrant n=ansible | TASK [application : Install compose] **********************************************************************************************
+2025-02-12 06:19:35,148 p=7824 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 06:19:35,154 p=7824 u=vagrant n=ansible | TASK [application : Deploy microservices application with Docker Compose] *********************************************************
+2025-02-12 06:19:35,680 p=7824 u=vagrant n=ansible | changed: [192.168.50.11]
+2025-02-12 06:19:35,682 p=7824 u=vagrant n=ansible | PLAY [Install Apache and PostgreSQL on node02] ************************************************************************************
+2025-02-12 06:19:35,686 p=7824 u=vagrant n=ansible | TASK [Gathering Facts] ************************************************************************************************************
+2025-02-12 06:19:36,547 p=7824 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 06:19:36,551 p=7824 u=vagrant n=ansible | TASK [apache : Install Apache2] ***************************************************************************************************
+2025-02-12 06:19:38,552 p=7824 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 06:19:38,557 p=7824 u=vagrant n=ansible | TASK [apache : Ensure Apache is running] ******************************************************************************************
+2025-02-12 06:19:38,908 p=7824 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 06:19:38,912 p=7824 u=vagrant n=ansible | TASK [postgres : Install python3-psycopg2] ****************************************************************************************
+2025-02-12 06:19:39,510 p=7824 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 06:19:39,514 p=7824 u=vagrant n=ansible | TASK [postgres : Install PostgreSQL] **********************************************************************************************
+2025-02-12 06:19:41,104 p=7824 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 06:19:41,108 p=7824 u=vagrant n=ansible | TASK [postgres : Ensure PostgreSQL is running] ************************************************************************************
+2025-02-12 06:19:41,332 p=7824 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 06:19:41,336 p=7824 u=vagrant n=ansible | TASK [postgres : Create PostgreSQL database] **************************************************************************************
+2025-02-12 06:19:41,555 p=7824 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 06:19:41,559 p=7824 u=vagrant n=ansible | TASK [postgres : Insert data into the table] **************************************************************************************
+2025-02-12 06:19:41,772 p=7824 u=vagrant n=ansible | fatal: [192.168.50.12]: FAILED! => changed=false 
+  msg: |-
+    Cannot execute SQL 'INSERT INTO test_table (name, age) VALUES ('Alice', 30);
+    INSERT INTO test_table (name, age) VALUES ('Bob', 25);
+    INSERT INTO test_table (name, age) VALUES ('Charlie', 35);
+    ' None: relation "test_table" does not exist
+    LINE 1: INSERT INTO test_table (name, age) VALUES ('Alice', 30);
+                        ^
+2025-02-12 06:19:41,773 p=7824 u=vagrant n=ansible | PLAY RECAP ************************************************************************************************************************
+2025-02-12 06:19:41,773 p=7824 u=vagrant n=ansible | 192.168.50.11              : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-02-12 06:19:41,773 p=7824 u=vagrant n=ansible | 192.168.50.12              : ok=7    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-02-12 06:20:42,945 p=8016 u=vagrant n=ansible | PLAY [Deploy application, apache and postgres] ************************************************************************************
+2025-02-12 06:20:42,952 p=8016 u=vagrant n=ansible | TASK [Gathering Facts] ************************************************************************************************************
+2025-02-12 06:20:44,100 p=8016 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 06:20:44,106 p=8016 u=vagrant n=ansible | TASK [application : Update] *******************************************************************************************************
+2025-02-12 06:20:46,168 p=8016 u=vagrant n=ansible | changed: [192.168.50.11]
+2025-02-12 06:20:46,175 p=8016 u=vagrant n=ansible | TASK [application : Install Docker] ***********************************************************************************************
+2025-02-12 06:20:46,823 p=8016 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 06:20:46,829 p=8016 u=vagrant n=ansible | TASK [application : Install compose] **********************************************************************************************
+2025-02-12 06:20:47,472 p=8016 u=vagrant n=ansible | ok: [192.168.50.11]
+2025-02-12 06:20:47,478 p=8016 u=vagrant n=ansible | TASK [application : Deploy microservices application with Docker Compose] *********************************************************
+2025-02-12 06:20:48,001 p=8016 u=vagrant n=ansible | changed: [192.168.50.11]
+2025-02-12 06:20:48,004 p=8016 u=vagrant n=ansible | PLAY [Install Apache and PostgreSQL on node02] ************************************************************************************
+2025-02-12 06:20:48,008 p=8016 u=vagrant n=ansible | TASK [Gathering Facts] ************************************************************************************************************
+2025-02-12 06:20:48,956 p=8016 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 06:20:48,960 p=8016 u=vagrant n=ansible | TASK [apache : Install Apache2] ***************************************************************************************************
+2025-02-12 06:20:50,941 p=8016 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 06:20:50,945 p=8016 u=vagrant n=ansible | TASK [apache : Ensure Apache is running] ******************************************************************************************
+2025-02-12 06:20:51,293 p=8016 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 06:20:51,298 p=8016 u=vagrant n=ansible | TASK [postgres : Install python3-psycopg2] ****************************************************************************************
+2025-02-12 06:20:51,889 p=8016 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 06:20:51,893 p=8016 u=vagrant n=ansible | TASK [postgres : Install PostgreSQL] **********************************************************************************************
+2025-02-12 06:20:53,479 p=8016 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 06:20:53,484 p=8016 u=vagrant n=ansible | TASK [postgres : Ensure PostgreSQL is running] ************************************************************************************
+2025-02-12 06:20:53,719 p=8016 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 06:20:53,724 p=8016 u=vagrant n=ansible | TASK [postgres : Create PostgreSQL database] **************************************************************************************
+2025-02-12 06:20:53,965 p=8016 u=vagrant n=ansible | ok: [192.168.50.12]
+2025-02-12 06:20:53,969 p=8016 u=vagrant n=ansible | TASK [postgres : Create a new table] **********************************************************************************************
+2025-02-12 06:20:54,214 p=8016 u=vagrant n=ansible | changed: [192.168.50.12]
+2025-02-12 06:20:54,219 p=8016 u=vagrant n=ansible | TASK [postgres : Insert data into the table] **************************************************************************************
+2025-02-12 06:20:54,360 p=8016 u=vagrant n=ansible | changed: [192.168.50.12]
+2025-02-12 06:20:54,362 p=8016 u=vagrant n=ansible | PLAY RECAP ************************************************************************************************************************
+2025-02-12 06:20:54,362 p=8016 u=vagrant n=ansible | 192.168.50.11              : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-02-12 06:20:54,362 p=8016 u=vagrant n=ansible | 192.168.50.12              : ok=9    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

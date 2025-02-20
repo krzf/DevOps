@@ -1,0 +1,68 @@
+- name: Install python3-psycopg2
+  apt:
+    name: python3-psycopg2
+    state: present
+  become: true
+
+- name: Install PostgreSQL
+  apt:
+    name: postgresql
+    state: present
+    update_cache: yes
+  become: true
+
+- name: Ensure PostgreSQL is running
+  service:
+    name: postgresql
+    state: started
+    enabled: yes
+  become: true
+
+- name: Start and enable PostgreSQL service
+  systemd:
+    name: postgresql
+    enabled: yes
+    state: started
+  become: yes
+
+
+- name: Temporarily update pg_hba.conf to use trust authentication
+  lineinfile:
+    path: /etc/postgresql/12/main/pg_hba.conf
+    regexp: '^local\s+all\s+postgres\s+\w+'
+    line: 'local   all             postgres                                trust'
+  become: yes
+
+- name: Restart PostgreSQL service to apply 'trust' authentication
+  systemd:
+    name: postgresql
+    state: restarted
+  become: yes
+
+- name: Set PostgreSQL password for user postgres
+  postgresql_user:
+    name: postgres
+    password: "postgres"  
+  become: yes
+
+
+- name: Update pg_hba.conf to use md5 authentication
+  lineinfile:
+    path: /etc/postgresql/12/main/pg_hba.conf
+    regexp: '^local\s+all\s+postgres\s+\w+'
+    line: 'local   all             postgres                                md5'
+  become: yes
+
+- name: Restart PostgreSQL service to apply 'md5' authentication
+  systemd:
+    name: postgresql
+    state: restarted
+  become: yes
+
+- name: Create database hotels_db
+  postgresql_db:
+    name: hotels_db
+    state: present
+    login_user: postgres
+    login_password: "postgres"  
+  become: yes

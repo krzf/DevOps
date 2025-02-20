@@ -1,0 +1,100 @@
+version: "3.8"
+services:
+  postgres:
+    image: postgres:alpine3.19
+    env_file:
+      - ./services/database/database.env
+    volumes:
+      - ./services/database/:/docker-entrypoint-initdb.d
+    
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - pg_isready -U postgres -d postgres
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    # restart: always
+    networks:
+      - postgres_net
+  
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    healthcheck:
+      test: rabbitmq-diagnostics -q ping
+      interval: 10s
+      timeout: 10s
+      retries: 3
+    networks:
+      - postgres_net
+  
+  booking:
+    image: krzf/booking-service:1
+    env_file:
+      - ./services/booking-service/booking.env
+    networks:
+      - postgres_net
+  
+  gateway:
+    image: krzf/gateway-service:1
+    env_file:
+      - ./services/gateway-service/gateway.env
+    networks:
+      - postgres_net
+  
+  hotel:
+    image: krzf/hotel-service:1
+    env_file:
+      - ./services/hotel-service/hotels.env
+    networks:
+      - postgres_net
+  
+  loyalty:
+    image: krzf/loyalty-service:1
+    env_file:
+      - ./services/loyalty-service/loyalty.env
+    networks:
+      - postgres_net
+  
+  payment:
+    image: krzf/payment-service:1
+    env_file:
+      - ./services/payment-service/payment.env
+    networks:
+      - postgres_net
+  
+  report:
+    image: krzf/report-service:1
+    env_file:
+      - ./services/report-service/report.env
+    networks:
+      - postgres_net
+  
+  session:
+    image: krzf/session-service:1
+    env_file:
+      - ./services/session-service/session.env
+    networks:
+      - postgres_net
+
+  nginx:
+    deploy:
+      placement:
+          constraints:
+              - "node.role==manager"
+    image: nginx
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - "8081:8081"
+      - "8087:8087"
+    networks:
+      - postgres_net
+
+volumes:
+  devops7-data: null
+
+networks:
+  postgres_net:
+    driver: overlay
