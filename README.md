@@ -1,2 +1,2 @@
-# devops
+# DevOps
 My DevOps projects
