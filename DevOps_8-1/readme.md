@@ -1,1 +1,9 @@
-In this project, i used automation tools like ansible for node provisioning.
+В этом проекте я научился разворачивать микросервисное приложение, а так же:
+1. Настройка инфраструктуры с Vagrant
+2. Автоматизация развертывания через Ansible
+3. Настройка Service Discovery с Consul
+4. Тестирование и проверка работоспособности
+
+
+
+
