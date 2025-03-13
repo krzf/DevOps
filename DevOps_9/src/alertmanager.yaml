@@ -1,0 +1,17 @@
+global:
+  resolve_timeout: 5m
+route:
+  receiver: 'telegram'
+receivers:
+  - name: 'telegram'
+    telegram_configs:
+      - send_resolved: true
+        api_url: https://api.telegram.org
+        bot_token: '6692915486:AAFkdCWp2pJMKHvT0SwOdWMSYxs4KYrJfjQ'
+        chat_id: -495180315
+inhibit_rules:
+  - source_match:
+      severity: 'critical'
+    target_match:
+      severity: 'warning'
+    equal: ['alertname', 'dev', 'instance']

@@ -1,0 +1,138 @@
+version: '3.8'
+
+services:
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yaml:/etc/prometheus/prometheus.yaml
+      - ./alert_rules.yaml:/etc/prometheus/alert_rules.yaml
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yaml'
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.role == manager
+    networks:
+      - postgres_net
+
+  loki:
+    image: grafana/loki:3.0.0
+    volumes:
+      - ./loki-config.yaml:/vagrant/loki-config.yaml
+    ports:
+      - "3100:3100"
+    command: -config.file=/vagrant/loki-config.yaml
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.role == manager
+    networks:
+      - postgres_net
+
+  promtail:
+    image: grafana/promtail:latest
+    volumes:
+      - /var/log:/var/log  # Для сбора логов с хоста
+      - ./promtail-config.yaml:/vagrant/promtail-config.yaml  # Конфигурация Promtail
+    command:
+      - -config.file=/vagrant/promtail-config.yaml
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.role == manager
+    networks:
+      - postgres_net
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana_data:/var/lib/grafana
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.role == manager
+    networks:
+      - postgres_net
+  node_exporter:
+    image: prom/node-exporter:latest
+    ports:
+      - "9100:9100"
+    deploy:
+      mode: global
+    networks:
+      - postgres_net
+
+  rabbitmq_exporter:
+    image: kbudde/rabbitmq-exporter:latest
+    environment:
+      RABBIT_URL: "http://guest:guest@rabbitmq:15672"  
+    ports:
+      - "9419:9419"
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.role == manager
+    networks:
+      - postgres_net
+
+  blackbox_exporter:
+    image: prom/blackbox-exporter:latest
+    ports:
+      - "9115:9115"
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.role == manager
+    networks:
+      - postgres_net
+
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:latest
+    ports:
+      - "8080:8080"
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:rw
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+    deploy:
+      mode: global
+    networks:
+      - postgres_net
+
+
+  alertmanager:
+    image: prom/alertmanager:v0.25.0
+    ports:
+      - "9093:9093"
+    volumes:
+   
+      - ./alertmanager.yaml:/etc/alertmanager/alertmanager.yaml
+    command:
+      - '--config.file=/etc/alertmanager/alertmanager.yaml'
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.role == manager
+    networks:
+      - postgres_net
+
+networks:
+  postgres_net:
+    driver: overlay
+
+
+volumes:
+  grafana_data:
+
